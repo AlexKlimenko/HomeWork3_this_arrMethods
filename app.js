@@ -64,3 +64,74 @@ console.log(`
 console.log(
   `4. Создать объект “вычислитель”, у которого есть числовое свойство “значение” и методы “удвоить”, “прибавить один”, “отнять один”. Методы можно вызывать через точку, образуя цепочку методов`
 );
+
+// function double() {
+//   return (this.value *= 2);
+// }
+
+// function plusOne() {
+//   return (this.value += 1);
+// }
+
+// function minusOne() {
+//   return (this.value -= 1);
+// }
+
+const numerator = {
+  value: 1,
+  double() {
+    this.value *= 2;
+    return this;
+  },
+  plusOne() {
+    this.value += 1;
+    return this;
+  },
+  minusOne() {
+    this.value -= 1;
+    return this;
+  }
+};
+
+numerator
+  .double()
+  .plusOne()
+  .plusOne()
+  .minusOne();
+
+console.log(numerator.value);
+
+console.log(`
+`);
+
+console.log(
+  `5. Создать объект с розничной ценой и количеством продуктов. Этот объект должен содержать метод для получения общей стоимости всех товаров (цена * количество продуктов) `
+);
+
+function amountPrice() {
+  return parseFloat(this.retailPrice) * this.num;
+}
+
+const product = {
+  retailPrice: "25$",
+  num: 5,
+  amountPrice
+};
+
+console.log(product.amountPrice());
+
+console.log(`
+`);
+
+console.log(
+  `6. Создать объект из предыдущей задачи. Создать второй объект, который описывает количество деталей и цену за одну деталь. Для
+второго объекта нужно узнать общую стоимость всех деталей, но нельзя создавать новые функции и методы.`
+);
+//первый объект и метод созданы в пред. задаче
+
+const detail = {
+  retailPrice: "50$",
+  num: 10
+};
+
+console.log(amountPrice.call(detail)); // если я правильно понял условие задачи
