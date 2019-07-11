@@ -204,9 +204,10 @@ console.log(
 numArr = [12, 4, 50, 1, 0, 18, 40];
 let containsNum = 0;
 
-let containsNumResult = numArr.every(el => el !== containsNum);
+//let containsNumResult = numArr.every(el => el !== containsNum); // Нет смысла записывать булево в переменную. Просто консолю
+// console.log(containsNumResult);
 
-console.log(containsNumResult);
+console.log(numArr.every(el => el !== containsNum));
 
 console.log(`
 `);
@@ -218,9 +219,10 @@ console.log(
 const strArray = ["yes", "hello", "no", "easycode", "what"];
 let limitLength = 3;
 
-let isExceed = strArray.some(el => el.length > limitLength);
+//let isExceed = strArray.some(el => el.length > limitLength); //Нет смысла записывать булево в переменную. Просто консолю
+//console.log(isExceed);
 
-console.log(isExceed);
+console.log(strArray.some(el => el.length > limitLength));
 
 console.log(`
 `);
